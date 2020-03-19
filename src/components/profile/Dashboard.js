@@ -10,16 +10,22 @@ class Dashboard extends Component{
         // console.log(this.props);
         const {profiles} = this.props;
         return(
-            <div className="container">
-                <div className="dashboard container">
+            <div className="pt-2 dashboard-container">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md pb-3">
+                            <span className="">Dashboard</span>
+                        </div>
+                    </div>
                     <div className ="row">
-                        <div className="col s12 m6">
+                        <div className="col-md-8">
                             <ConnectionList profiles= {profiles}/>   {/* Display the list of connection the user has */}
                         </div>
-                        <div className="col s12 m5 offset-m1">
+                        <div className="col-md-4">
                             <Notification />
                         </div>
                     </div>
+                
                 </div>
             </div>
         )

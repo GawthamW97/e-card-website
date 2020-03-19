@@ -7,7 +7,7 @@ class Login extends Component {
         email : '',
         password: ''
     }
-    handelChange = (e) => {
+    handleChange = (e) => {
         this.setState({
             [e.target.id]: e.target.value
         })
@@ -21,23 +21,31 @@ class Login extends Component {
         const {authError} = this.props;
         return (
             <div className="container">
-                <form onSubmit = {this.handleSubmit} className="white">
-                    <h5 className = "grey-text text-darken-3">Login</h5>
-                    <div className = "input-field">
-                        <label htmlFor="email">Email</label>
-                        <input type="email" id= "email" onChange ={this.handelChange}/>
+                <div className="row">
+                    <div className="col-md-6 mx-auto">
+                        <form onSubmit = {this.handleSubmit} className="white">
+                            <div className="card">
+                                <h5 className="card-title text-center">Login</h5>
+                                <div className="card-body">
+                                    <div className="form-group">
+                                        <label htmlFor="email">Email</label>
+                                        <input className="form-control" type="email" id="email" onChange ={this.handleChange}/>
+                                    </div>
+                                    <div className = "form-group">
+                                        <label htmlFor="password">Password</label>
+                                        <input className="form-control" type="password" id="password" onChange={this.handleChange}/>
+                                    </div>
+                                    <div className="form-group">
+                                        <button className="btn btn-primary">Login</button>
+                                        <div className="text-danger text-center">
+                                            {authError ? <p>{authError}</p> : null}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form> 
                     </div>
-                    <div className = "input-field">
-                        <label htmlFor="password">Password</label>
-                        <input type="password" id="password" onChange={this.handelChange}/>
-                    </div>
-                    <div className="input-filed">
-                        <button className="btn pink lighten-1 z-depth-0">Login</button>
-                        <div className="red-text center">
-                            {authError ? <p>{authError}</p> : null}
-                        </div>
-                    </div>
-                </form>       
+                </div>      
             </div>
         )
     }

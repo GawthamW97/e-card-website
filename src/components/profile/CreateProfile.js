@@ -20,20 +20,28 @@ class CreateProfile extends Component {
     render() {
         return (
             <div className="container">
-                <form onSubmit = {this.handleSubmit} className="white">
-                    <h5 className = "grey-text text-darken-3">Create Profile</h5>
-                    <div className = "input-field">
-                        <label htmlFor="fName">Full Name</label>
-                        <input type="text" id= "fN" onChange ={this.handelChange}/>
+                <div className="row">
+                    <div className="col-md-5 mx-auto">
+                        <form onSubmit = {this.handleSubmit} className="white">
+                            <div className="card">
+                                <h5 className = "card-title text-center">Create Profile</h5>
+                                <div className="card-body">
+                                    <div className = "form-group">
+                                        <label htmlFor="fName">Full Name</label>
+                                        <input className="form-control" type="text" id= "fN" onChange ={this.handelChange}/>
+                                    </div>
+                                    <div className = "form-group">
+                                        <label htmlFor="company">Company</label>
+                                        <input className="form-control" type="text" id="cmp" onChange={this.handelChange}/>
+                                    </div>
+                                    <div className="form-group">
+                                        <button className="btn btn-primary">Upload</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>  
                     </div>
-                    <div className = "input-field">
-                        <label htmlFor="company">Company</label>
-                        <input type="text" id="cmp" onChange={this.handelChange}/>
-                    </div>
-                    <div className="input-filed">
-                        <button className="btn pink lighten-1 z-depth-0">Upload</button>
-                    </div>
-                </form>       
+                </div>     
             </div>
         )
     }

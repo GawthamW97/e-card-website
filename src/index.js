@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+// import 'bootstrap/dist/css/bootstrap.min.css'
 import './index.css';
 import App from './App';
 import * as firebase from 'firebase';
@@ -12,7 +13,6 @@ import thunk from 'redux-thunk'
 import { ReactReduxFirebaseProvider,getFirebase,reactReduxFirebase} from 'react-redux-firebase'
 import { reduxFirestore,createFirestoreInstance,getFirestore } from 'redux-firestore'
 import fbConfig from './config/fbConfig'
-
 const rrfConfig = {userProfile: 'users'} // react-redux-firebase config
 const initialState = {}
 // Initialize firebase instance

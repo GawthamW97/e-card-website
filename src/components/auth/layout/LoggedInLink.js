@@ -1,15 +1,15 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import {NavLink} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {logout} from '../../../store/actions/authAction'
 
 const LoggedInLink = (props) => {
     return(
-        <ul className="right">
-            <li><NavLink to='/create'>Create Profile</NavLink></li>
-            <li><a onClick={props.logout} to='/'>Log Out</a></li>
-            <li><NavLink to='/' className='btn btn-floating pink lighten-1'>NN</NavLink></li>
-        </ul>
+        <Fragment>
+            <li className="nav-item"><NavLink className="nav-link" to='/create'>Create Profile</NavLink></li>
+            <li className="nav-item"><a className="nav-link" onClick={props.logout} to='/'>Log Out</a></li>
+            <li className="nav-item"><NavLink to='/' className='btn btn-outline-primary'>NN</NavLink></li>
+        </Fragment>
     )
 }
 

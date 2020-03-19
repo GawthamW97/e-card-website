@@ -7,11 +7,18 @@ const ViewConnection = (props) => {
     const {conn_profile} = props;
     if(conn_profile){
         return(
-            <div className="container section project-details">
-                <div className="card z-depth-0">
-                    <div className="card-content">
-                        <span className="card-title">Name - {conn_profile.fN}</span>
-                        <p>Company - {conn_profile.cmp}</p>
+
+            <div className="pt-2 section project-details">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-6 mx-auto">
+                            <div className="card">
+                                <div className="card-body">
+                                    <span className="card-title">Name - {conn_profile.fN}</span>
+                                    <p>Company - {conn_profile.cmp}</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
