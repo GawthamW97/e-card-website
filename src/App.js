@@ -7,8 +7,14 @@ import Login from './components/auth/Login'
 import Register from './components/auth/Register'
 import CreateProfile from './components/profile/CreateProfile'
 import UserProfile from './components/profile/UserProfile'
+// import ValidationForm from './components/ValidationForm';
 // import 'bootstrap/dist/css/bootstrap.min.css';
+
 class App extends Component{
+  state = {
+    visible: true
+  };
+
   render(){
     return (
       <BrowserRouter>
@@ -27,4 +33,5 @@ class App extends Component{
       );
     }
   }
+
 export default App;
