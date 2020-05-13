@@ -1,6 +1,6 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
-import moment from "moment";
+import moment from 'moment';
 
 const Notification = ({ notification }) => {
   // const { notification } = props;

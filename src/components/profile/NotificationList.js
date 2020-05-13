@@ -8,7 +8,7 @@ const NotificationList = ({ notification }) => {
       {notification &&
         notification.map((item) => {
           return (
-            <div>
+            <div key={item.id}> 
               <Link
                 to={"/profile/" + item.id}
                 key={item.id}

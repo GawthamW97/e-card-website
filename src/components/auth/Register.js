@@ -26,6 +26,7 @@ class Register extends Component {
       eM: "",
     },
   };
+  
   validateInputAndSetState = (id, value) => {
     const errors = validator.validate(id, value, this.state.errors);
     this.setState({ errors, [id]: value });
