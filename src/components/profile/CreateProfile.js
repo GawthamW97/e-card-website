@@ -179,7 +179,7 @@ function CreateProfile(props) {
         })
         .catch(console.error);
     } catch (err) {
-      console.log(0);
+      console.log(err);
     }
   };
   const { auth } = props;
