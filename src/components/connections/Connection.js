@@ -30,7 +30,7 @@ const Connection = ({ profile }) => {
     <div>
       <Card className={classes.root}>
         <CardContent>
-          <Grid container spcing={3}>
+          <Grid container spacing={3}>
             <Grid item xs={6}>
               <Avatar
                 alt={profile.fN}

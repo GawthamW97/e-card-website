@@ -64,7 +64,7 @@ function Dashboard(props) {
     });
   return (
     <div className={classes.root}>
-      <Grid container spcing={3}>
+      <Grid container spacing={3}>
         <Grid item xs={6}>
           <div className={classes.paper}>
             <TextField

@@ -11,8 +11,9 @@ import Admin from "./components/admin/AdminPage";
 // import Admin2 from "./components/admin/AdminPage2";
 import ChangePwd from "./components/settings/ChangePassword";
 import ChangeEmail from "./components/settings/ChangeEmail";
-
+import HomePage from "./components/auth/HomePage";
 // import 'bootstrap/dist/css/bootstrap.min.css';
+
 class App extends Component {
   render() {
     return (
@@ -20,6 +21,7 @@ class App extends Component {
         <div className="App">
           <Navbar />
           <Switch>
+            <Route exact path="/homepage" component={HomePage} />
             <Route exact path="/" component={Dashboard} />
             <Route path="/profile/:id" component={ViewConnection} />
             <Route path="/login" component={Login} />
@@ -29,8 +31,6 @@ class App extends Component {
             <Route path="/admin" component={Admin} />
             <Route path="/pwd" component={ChangePwd} />
             <Route path="/email" component={ChangeEmail} />
-
-            {/* <Route path="/admin2" component={Admin2} /> */}
           </Switch>
         </div>
       </BrowserRouter>
