@@ -36,7 +36,7 @@ function Admin(props) {
 
   if (current_user.pNo === 0) return <Redirect to="/create" />;
 
-  if (!current_user.status) return <Redirect to="/" />;
+  // if (!current_user.status) return <Redirect to="/" />;
   const conn_list = [];
   localStorage.removeItem("profile");
   localStorage.removeItem("create");

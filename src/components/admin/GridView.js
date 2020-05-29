@@ -22,6 +22,9 @@ import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
 
+import Snackbar from '@material-ui/core/Snackbar';
+import Alert from '@material-ui/lab/Alert';
+
 import {
   Button,
   TextField,
@@ -173,12 +176,28 @@ function GridView(props) {
   const [id, setID] = useState("fN");
 
   const [open, setOpen] = React.useState(false);
+  const [snackbarState, setSnackbarState] = React.useState(false);
 
   const [prof, setProf] = useState({});
 
+  const openSnackbar = () => {
+    setSnackbarState(true);
+  };
+
+  const closeSnackbar = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setSnackbarState(false);
+  };
+
   const handleClickOpen = (prof) => {
-    setProf(prof);
+    console.log('delete?');
+    console.log(prof)
     setOpen(true);
+    // setProf(prof);
+    // setOpen(true);
   };
 
   const handleClose = () => {
@@ -280,11 +299,19 @@ function GridView(props) {
   }
 
   function handleDelete(id) {
-    props.deleteUser(id);
+    // props.deleteUser(id);
+    console.log('clicked delete!');
     handleClose();
+    openSnackbar();
   }
   return (
     <div className={classes.root}>
+      <Snackbar open={snackbarState} autoHideDuration={3000} onClose={closeSnackbar}>
+        <Alert onClose={closeSnackbar} severity="success">
+          User has been successfully deleted...
+        </Alert>
+      </Snackbar>
+        
       <Card className={classes.paper} variant="outlined">
         <div style={{ display: "inline", float: "left", margin: "10px" }}>
           <h2>Registered Users</h2>

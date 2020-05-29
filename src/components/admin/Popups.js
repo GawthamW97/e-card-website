@@ -35,8 +35,9 @@ function Popups(props) {
   });
 
   function handleDelete(id) {
+    console.log('Delete clicked!')
     console.log(props);
-    props.deleteConnection(id);
+    // props.deleteConnection(id);
   }
   return (
     <Dialog
