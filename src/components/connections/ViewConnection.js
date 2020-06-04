@@ -380,7 +380,7 @@ function ViewConnection(props) {
                         <label style={{ fontWeight: "bold" }}>
                           Personal Number -{" "}
                         </label>
-                        {94 + doc.pNo}
+                        94{doc.pNo}
                       </Typography>
                     )}
                   </div>
@@ -485,7 +485,7 @@ function ViewConnection(props) {
                       <label style={{ fontWeight: "bold" }}>
                         Work Number -{" "}
                       </label>
-                      {94 + doc.wNo}
+                      94{doc.wNo}
                     </Typography>
                   )}
                   <div>

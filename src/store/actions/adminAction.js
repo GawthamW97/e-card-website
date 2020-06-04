@@ -3,6 +3,7 @@ export const updateProfile = (profile) => {
     //make asyn call to database
     profile["pNo"] = parseInt(profile.pNo);
     profile["wNo"] = parseInt(profile.wNo);
+
     const firestore = firebase.firestore();
     const id = getState().firebase.auth.uid.toString();
     firestore
