@@ -256,7 +256,7 @@ function ViewConnection(props) {
       props.history.goBack();
     } else {
       // if the user is normal user it will remove the connectin list from their list.
-      props.deleteConnection(uid, props.admin_profile.id);
+      props.deleteConnection(props.auth.uid, uid);
       props.history.goBack();
     }
   };
