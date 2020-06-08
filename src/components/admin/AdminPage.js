@@ -8,6 +8,7 @@ import Card from "@material-ui/core/Card";
 import Grow from "@material-ui/core/Grow";
 import { makeStyles } from "@material-ui/core/styles";
 import GridView from "../admin/GridView";
+import { Container } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -53,21 +54,23 @@ function Admin(props) {
   const checked = true;
   if (profiles !== undefined && conn_list.length === profiles.length) {
     return (
-      <div className={classes.root}>
-        <Grid container spacing={3}>
-          <Grow
-            in={checked}
-            style={{ transformOrigin: "0 0 0" }}
-            {...(checked ? { timeout: 1000 } : {})}
-          >
-            <Grid item xs={12}>
-              <div style={{ width: "80%", margin: "auto" }}>
-                <GridView profiles={conn_list} />
-              </div>
-            </Grid>
-          </Grow>
-        </Grid>
-      </div>
+      <Container style={{ marginTop: "30px" }}>
+        <div className={classes.root}>
+          <Grid container spacing={3}>
+            <Grow
+              in={checked}
+              style={{ transformOrigin: "0 0 0" }}
+              {...(checked ? { timeout: 1000 } : {})}
+            >
+              <Grid item xs={12}>
+                <div style={{ width: "80%", margin: "auto" }}>
+                  <GridView profiles={conn_list} />
+                </div>
+              </Grid>
+            </Grow>
+          </Grid>
+        </div>
+      </Container>
     );
   } else {
     return (

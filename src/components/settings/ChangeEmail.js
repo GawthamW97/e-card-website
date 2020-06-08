@@ -72,6 +72,7 @@ function ChangeEmail(props) {
       props.updateEmail(doc);
       props.logout();
     } else {
+      window.alert("Failed to update New e-mail address");
     }
   };
   const { authError, auth } = props;

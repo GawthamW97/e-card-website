@@ -8,7 +8,7 @@ const validPasswordRegex = RegExp(
 
 const validNameRegex = RegExp(/[ !@#$%^&*(),.?":{}|<>0-9]/i);
 
-const validPhoneNoRegex = RegExp("^[0-9]{9}$");
+const validPhoneNoRegex = RegExp("^[0-9]{10}$");
 
 const checkMinLength = (value, length) => value.length < length;
 
@@ -142,7 +142,7 @@ export const validate = (id, value, _errors) => {
     if (Number(value) === 0) {
       errors[id] = "Field can not be blank";
     } else if (!validPhoneNoRegex.test(value)) {
-      errors[id] = "Field requires 9 digits";
+      errors[id] = "Field requires 10 digits";
     } else {
       errors[id] = "";
     }
@@ -153,7 +153,7 @@ export const validate = (id, value, _errors) => {
     if (Number(value) === 0) {
       errors[id] = "Field can not be blank";
     } else if (!validPhoneNoRegex.test(value)) {
-      errors[id] = "Field requires 9 digits";
+      errors[id] = "Field requires 10 digits";
     } else {
       errors[id] = "";
     }

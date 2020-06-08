@@ -1,8 +1,6 @@
 export const createProfile = (profile) => {
   return (dispatch, getState, { firebase }) => {
     //make async call to database
-    profile["pNo"] = parseInt(profile.pNo);
-    profile["wNo"] = parseInt(profile.wNo);
     const firestore = firebase.firestore();
     const id = getState().firebase.auth.uid.toString();
     firestore
@@ -24,8 +22,6 @@ export const createProfile = (profile) => {
 export const updateProfile = (profile) => {
   return (dispatch, getState, { firebase }) => {
     //make async call to database
-    profile["pNo"] = parseInt(profile.pNo);
-    profile["wNo"] = parseInt(profile.wNo);
     const firestore = firebase.firestore();
     const id = getState().firebase.auth.uid.toString();
     firestore
@@ -75,14 +71,14 @@ export const changePwd = (credentials) => {
 
     const credential = firebase.auth.EmailAuthProvider.credential(
       mail,
-      credentials.currPwd
+      credentials.password
     );
 
     user
       .reauthenticateWithCredential(credential)
       .then(function (userCredential) {
         userCredential.user
-          .updatePassword(credentials.password)
+          .updatePassword(credentials.pwd)
           .then(() => {
             dispatch({ type: "UPDATE_PROFILE" });
           })

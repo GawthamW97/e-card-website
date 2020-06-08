@@ -510,11 +510,7 @@ function UserProfile(props) {
                         id="pNo"
                         label="Personal Number"
                         value={doc.pNo}
-                        helperText={
-                          valid
-                            ? "No need to insert zero in the begining"
-                            : doc.errors.pNo
-                        }
+                        helperText={valid ? null : doc.errors.pNo}
                         onChange={handleChange}
                         variant="outlined"
                         style={{ float: "left" }}
@@ -577,11 +573,7 @@ function UserProfile(props) {
                         id="wNo"
                         label="Work Phone Number"
                         value={doc.wNo}
-                        helperText={
-                          valid
-                            ? "No need to insert zero in the begining"
-                            : doc.errors.wNo
-                        }
+                        helperText={valid ? null : doc.errors.wNo}
                         onChange={handleChange}
                         variant="outlined"
                         style={{ float: "left" }}

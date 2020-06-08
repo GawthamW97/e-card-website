@@ -38,7 +38,8 @@ function ChangePWd(props) {
 
   const [open, setOpen] = React.useState(false);
 
-  const handleClickOpen = () => {
+  const handleClickOpen = (e) => {
+    e.preventDefault();
     setOpen(true);
   };
 
@@ -69,11 +70,12 @@ function ChangePWd(props) {
     // if error object is empty then the form is valid
     const isFormValid = validator.isErrorObjectEmpty(doc.errors);
     // submit if the form is valid
-
+    handleClose();
     if (isFormValid && (doc.pwd === doc.repwd) & (doc.pwd !== doc.password)) {
       props.changePwd(doc);
       props.logout();
     } else {
+      window.alert("Failed to Update");
     }
   };
   const { authError, auth } = props;

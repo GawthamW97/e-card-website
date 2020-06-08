@@ -365,11 +365,7 @@ function ViewConnection(props) {
                           id="pNo"
                           label="Work Phone Number"
                           value={doc.pNo}
-                          helperText={
-                            valid
-                              ? "No need to insert zero in the begining"
-                              : doc.errors.pNo
-                          }
+                          helperText={valid ? null : doc.errors.pNo}
                           onChange={handleChange}
                           variant="outlined"
                           style={{ float: "left" }}
@@ -380,7 +376,7 @@ function ViewConnection(props) {
                         <label style={{ fontWeight: "bold" }}>
                           Personal Number -{" "}
                         </label>
-                        94{doc.pNo}
+                        {doc.pNo}
                       </Typography>
                     )}
                   </div>
@@ -466,11 +462,7 @@ function ViewConnection(props) {
                         id="wNo"
                         label="Work Phone Number"
                         value={doc.wNo}
-                        helperText={
-                          valid
-                            ? "No need to insert zero in the begining"
-                            : doc.errors.wNo
-                        }
+                        helperText={valid ? null : doc.errors.wNo}
                         onChange={handleChange}
                         variant="outlined"
                         style={{ float: "left" }}
@@ -485,7 +477,7 @@ function ViewConnection(props) {
                       <label style={{ fontWeight: "bold" }}>
                         Work Number -{" "}
                       </label>
-                      94{doc.wNo}
+                      {doc.wNo}
                     </Typography>
                   )}
                   <div>

@@ -367,7 +367,7 @@ function CreateProfile(props) {
         </DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-slide-description">
-            By clicking yse you will create your profile in the E-Card System.
+            By clicking yes you will create your profile in the E-Card System.
             You will be redirected to your account after clicking "Yes". If
             there are any changes to be done click "No".
           </DialogContentText>
@@ -502,11 +502,7 @@ function CreateProfile(props) {
                       id="pNo"
                       label="Personal Number"
                       value={doc.pNo}
-                      helperText={
-                        valid
-                          ? "No need to insert zero in the begining"
-                          : doc.errors.pNo
-                      }
+                      helperText={valid ? null : doc.errors.pNo}
                       onChange={handleChange}
                       variant="outlined"
                       style={{ float: "left" }}
@@ -572,11 +568,7 @@ function CreateProfile(props) {
                       id="wNo"
                       label="Work Phone Number"
                       value={doc.wNo}
-                      helperText={
-                        valid
-                          ? "No need to insert zero in the begining"
-                          : doc.errors.wNo
-                      }
+                      helperText={valid ? null : doc.errors.wNo}
                       onChange={handleChange}
                       variant="outlined"
                       style={{ float: "left" }}
